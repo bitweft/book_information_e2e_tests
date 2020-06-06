@@ -1,0 +1,9 @@
+capabilities:
+  - udid: emulator-5554
+    systemPort: 8200
+    platformName: Android
+    deviceName: Nexus 5
+  - udid: emulator-5556
+    systemPort: 8201
+    platformName: Android
+    deviceName: Pixel 3

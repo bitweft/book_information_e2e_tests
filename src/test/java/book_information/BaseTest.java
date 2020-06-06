@@ -7,9 +7,9 @@ import org.testng.annotations.Parameters;
 
 public class BaseTest {
     @BeforeMethod
-    @Parameters({"udid", "systemPort"})
-    public void setup(String udid, String systemPort) {
-        DriverHelper.createDriver(udid, systemPort);
+    @Parameters({"device"})
+    public void setup(String device) {
+        DriverHelper.createDriver(device);
     }
 
     @AfterMethod
