@@ -3,7 +3,6 @@ package book_information.pages;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,7 +19,7 @@ public class SearchResultsPage extends BasePage {
     }
 
     private List<MobileElement> getSearchResults() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(title));
+        waitForPresenceOfElement(title);
         return driver.findElements(title);
     }
 }
