@@ -18,6 +18,11 @@ public class SearchResultsPage extends BasePage {
                 .collect(Collectors.toList());
     }
 
+    public BookDetailsPage selectBookAtPosition(int position) {
+        getSearchResults().get(position).click();
+        return new BookDetailsPage();
+    }
+
     private List<MobileElement> getSearchResults() {
         waitForPresenceOfElement(title);
         return driver.findElements(title);
