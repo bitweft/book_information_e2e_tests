@@ -29,6 +29,9 @@
                 <configuration>
                     <argLine>--enable-preview</argLine>
                     <threadCount>${maven-surefire-plugin.threadCount}</threadCount>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
