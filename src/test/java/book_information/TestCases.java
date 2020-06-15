@@ -12,7 +12,9 @@ import java.util.List;
 public class TestCases extends BaseTest {
     @Test
     public void verifySearchResults() {
-        driver.findElement(By.id("book_name")).sendKeys("harry");
+        String searchTerm = "harry";
+
+        driver.findElement(By.id("book_name")).sendKeys(searchTerm);
         driver.findElement(By.id("search_books")).click();
 
         WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -25,7 +27,7 @@ public class TestCases extends BaseTest {
 
         boolean match = true;
         for (String title : titles) {
-            if (!title.toLowerCase().contains("harry")) {
+            if (!title.toLowerCase().contains(searchTerm)) {
                 match = false;
                 break;
             }
@@ -37,11 +39,16 @@ public class TestCases extends BaseTest {
     public void verifySearchedBookDetails() {
         driver.findElementById("book_name").sendKeys("harry");
         driver.findElementById("search_books").click();
+
+        int position = 0;
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("title")));
-        driver.findElementsById("title").get(0).click();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("title")));
-        MobileElement title = driver.findElement(By.id("title"));
-        assert title.getText().toLowerCase().contains("harry");
+        driver.findElementsById("title").get(position).click();
+
+        WebDriverWait wait2 = new WebDriverWait(driver, 20);
+        wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("title")));
+        String title = driver.findElement(By.id("title")).getText();
+        
+        assert title.toLowerCase().contains("harry");
     }
 }
