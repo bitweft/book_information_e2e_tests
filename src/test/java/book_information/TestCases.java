@@ -36,7 +36,7 @@ public class TestCases extends BaseTest {
     }
 
     @Test
-    public void verifySearchedBookDetails() {
+    public void verifyBookDetails() {
         driver.findElementById("book_name").sendKeys("harry");
         driver.findElementById("search_books").click();
 
@@ -47,9 +47,9 @@ public class TestCases extends BaseTest {
         titles.get(position).click();
 
         WebDriverWait wait2 = new WebDriverWait(driver, 20);
-        wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("title")));
-        String title = driver.findElement(By.id("title")).getText();
-        
-        assert title.toLowerCase().contains("harry");
+        wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("num_of_pages")));
+        int numberOfPages = Integer.parseInt(driver.findElement(By.id("num_of_pages")).getText());
+
+        assert numberOfPages > 0;
     }
 }
