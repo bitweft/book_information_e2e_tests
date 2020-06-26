@@ -43,7 +43,8 @@ public class TestCases extends BaseTest {
         int position = 0;
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("title")));
-        driver.findElementsById("title").get(position).click();
+        List<MobileElement> titles = driver.findElementsById("title");
+        titles.get(position).click();
 
         WebDriverWait wait2 = new WebDriverWait(driver, 20);
         wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("title")));
