@@ -8,7 +8,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class BookDetailsTest extends BaseTest {
     @Test
-    public void verifyBookSearchResults() {
+    public void verifyBookSearchResultsIsNotEmpty() {
         String bookName = "harry";
         BookDetailsPage bookDetailsPage = new HomePage()
                 .searchBook(bookName)
