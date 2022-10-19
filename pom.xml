@@ -81,7 +81,7 @@
         <java-client.version>7.3.0</java-client.version>
         <selenium-java.version>3.141.59</selenium-java.version>
         <maven-surefire-plugin.threadCount>2</maven-surefire-plugin.threadCount>
-        <jackson.version>2.11.0</jackson.version>
+        <jackson.version>2.13.4.1</jackson.version>
     </properties>
 
 </project>
